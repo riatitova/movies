@@ -23,30 +23,31 @@ import cat18 from '../../assets/images/cat18.jpg';
 import cat19 from '../../assets/images/cat19.jpg';
 import cat20 from '../../assets/images/cat20.jpg';
 
+const catsSources = [
+  cat0,
+  cat1,
+  cat2,
+  cat3,
+  cat4,
+  cat5,
+  cat6,
+  cat7,
+  cat8,
+  cat9,
+  cat10,
+  cat11,
+  cat12,
+  cat13,
+  cat14,
+  cat15,
+  cat16,
+  cat17,
+  cat18,
+  cat19,
+  cat20,
+];
+
 function MainPage() {
-  const catsSources = [
-    cat0,
-    cat1,
-    cat2,
-    cat3,
-    cat4,
-    cat5,
-    cat6,
-    cat7,
-    cat8,
-    cat9,
-    cat10,
-    cat11,
-    cat12,
-    cat13,
-    cat14,
-    cat15,
-    cat16,
-    cat17,
-    cat18,
-    cat19,
-    cat20,
-  ];
   return (
     <div className="main-page flex items-center flex-col">
       <SearchBar />

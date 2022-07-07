@@ -8,7 +8,6 @@ import AboutPage from './components/about-page/AboutPage';
 function App() {
   return (
     <div className="App">
-      <Router>
         <div>
           <nav className="py-4 px-6 text-sm font-medium bg-slate-800">
             <ul className="flex space-x-3">
@@ -33,7 +32,6 @@ function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
-      </Router>
     </div>
   );
 }
