@@ -1,16 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+export const addItemToLS = (movie: string) => {
+  localStorage.setItem('searching-movie', movie);
+};
+
+export const getItemFromLS = () => {
+  return localStorage.getItem('searching-movie');
+};
+
 function SearchBar() {
   const [searchingMovie, setSearchingMovie] = useState('');
   const movieRef = useRef(searchingMovie);
 
   useEffect(() => {
-    const movie = localStorage.getItem('searching-movie');
+    const movie = getItemFromLS();
     if (movie !== null) {
       setSearchingMovie(movie);
     }
     return () => {
-      localStorage.setItem('searching-movie', movieRef.current);
+      addItemToLS(movieRef.current);
     };
   }, []);
 
@@ -23,6 +31,7 @@ function SearchBar() {
       <input
         className="m-2.5 px-0.5 w-1/2 h-12 rounded-lg outline-none border-2 border-cyan-500 text-cyan-500"
         placeholder="Enter movie"
+        data-testid="input"
         value={searchingMovie}
         onChange={(e) => setSearchingMovie(e.target.value)}
       />
