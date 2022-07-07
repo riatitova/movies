@@ -8,26 +8,30 @@ import AboutPage from './components/about-page/AboutPage';
 function App() {
   return (
     <div className="App">
-      <Router>
         <div>
-          <nav>
-            <ul>
+          <nav className="py-4 px-6 text-sm font-medium bg-slate-800">
+            <ul className="flex space-x-3">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" className="text-base font-medium text-cyan-500 hover:text-cyan-300">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <Link
+                  to="/about"
+                  className="text-base font-medium text-cyan-500 hover:text-cyan-300"
+                >
+                  About
+                </Link>
               </li>
             </ul>
           </nav>
-
           <Routes>
             <Route path="/about" element={<AboutPage />} />
             <Route path="/" element={<MainPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
-      </Router>
     </div>
   );
 }
