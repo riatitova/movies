@@ -14,30 +14,30 @@ describe('App', () => {
     const history = createMemoryHistory();
     render(
       <Router location={history.location} navigator={history}>
-        <App/>
-      </Router>,
+        <App />
+      </Router>
     );
     screen.debug();
     expect(screen.getByText(/home/i)).toBeInTheDocument();
     expect(screen.getByText(/about/i)).toBeInTheDocument();
-    expect(screen.queryByText((/menu/i))).toBeNull();
+    expect(screen.queryByText(/menu/i)).toBeNull();
   });
 });
 
 describe('SearchBar', () => {
   it('renders SearchBar component', () => {
-    render(<SearchBar/>);
+    render(<SearchBar />);
     screen.debug();
     expect(screen.getByPlaceholderText(/enter movie/i)).toBeInTheDocument();
     expect(screen.getByRole('textbox')).toBeInTheDocument();
     expect(screen.getByText(/search/i)).toBeInTheDocument();
-    expect(screen.queryByText((/cinema/i))).toBeNull();
+    expect(screen.queryByText(/cinema/i)).toBeNull();
   });
 });
 
 describe('AboutPage', () => {
   it('renders AboutPage component', () => {
-    render(<AboutPage/>);
+    render(<AboutPage />);
     screen.debug();
     expect(screen.getByText(/about us/i)).toBeInTheDocument();
   });
@@ -45,7 +45,7 @@ describe('AboutPage', () => {
 
 describe('NotFoundPage', () => {
   it('renders NotFoundPage component', () => {
-    render(<NotFoundPage/>);
+    render(<NotFoundPage />);
     screen.debug();
     expect(screen.getByText(/404/i)).toBeInTheDocument();
   });
@@ -53,12 +53,12 @@ describe('NotFoundPage', () => {
 
 describe('Card', () => {
   it('renders Card component', () => {
-    render(<Card src={''}/>);
+    render(<Card src={''} />);
     screen.debug();
     expect(screen.getByAltText(/cat/i)).toBeInTheDocument();
     expect(screen.getByText(/name/i)).toBeInTheDocument();
     expect(screen.getByText(/country/i)).toBeInTheDocument();
-    expect(screen.queryByText((/dog/i))).toBeNull();
+    expect(screen.queryByText(/dog/i)).toBeNull();
   });
 });
 
